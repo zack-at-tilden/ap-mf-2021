@@ -22,7 +22,7 @@ public class TriangleComponent extends JComponent{
 		Point [] points = tri.getPoints();
 		int i = 0;
 		for (Point p: points) {
-			System.out.printf("pX:%d pY:%d\n", p.getX(),p.getY());
+//			System.out.printf("pX:%d pY:%d\n", p.getX(),p.getY());
 			x [i] = p.getX();
 			y [i++] = p.getY();
 		}
