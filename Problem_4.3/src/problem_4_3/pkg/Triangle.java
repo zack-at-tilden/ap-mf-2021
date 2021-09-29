@@ -34,4 +34,9 @@ public class Triangle {
 	public void displayArea() {
 		System.out.printf("Area: %.2f\n",area);
 	}
+	
+	public Point [] getPoints() {
+		Point [] points = {p1,p2,p3};
+		return points;
+	}
 }
