@@ -1,7 +1,6 @@
 package second_project_pkg;
 
 import java.util.concurrent.TimeUnit;
-
 import javax.swing.JFrame;
 
 
