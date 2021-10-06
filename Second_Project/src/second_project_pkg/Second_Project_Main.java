@@ -9,6 +9,8 @@ public class Second_Project_Main {
 	final static int WINDOW_W = 600;
 	final static int WINDOW_H = 400;
 	
+	final static int SPEED = 2;
+	
 	//main method
 	public static void main(String[] args) {
 		// comment
@@ -17,7 +19,7 @@ public class Second_Project_Main {
 		frame.setTitle("Window");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		GraphicComponent component = new GraphicComponent(1,1);
+		GraphicComponent component = new GraphicComponent(SPEED,SPEED);
 		frame.add(component);
 		
 		
