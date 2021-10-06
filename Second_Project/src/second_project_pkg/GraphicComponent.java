@@ -29,10 +29,10 @@ public class GraphicComponent extends JComponent{
 	}
 	
 	public void move() {
-		if (x[0] < 0 || x[2] + 20 > Second_Project_Main.WINDOW_W) {
+		if (x[0] < 0 || x[2] > getWidth()) {
 			dx*=-1;
 		}
-		if (y[0] < 0 || y[1] + 35 > Second_Project_Main.WINDOW_H) {
+		if (y[0] < 0 || y[1] > getHeight()) {
 			dy*=-1;
 		}
 		for (int i=0; i<3; i++) {
