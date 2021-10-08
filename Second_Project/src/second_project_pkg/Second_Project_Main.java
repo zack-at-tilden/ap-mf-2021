@@ -9,7 +9,8 @@ public class Second_Project_Main {
 	final static int WINDOW_W = 600;
 	final static int WINDOW_H = 400;
 	
-	final static int SPEED = 2;
+	final static int SPEED = 3;
+	final static int SPEED2 = 4;
 	
 	//main method
 	public static void main(String[] args) {
@@ -19,7 +20,7 @@ public class Second_Project_Main {
 		frame.setTitle("Window");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		GraphicComponent component = new GraphicComponent(SPEED,SPEED);
+		GraphicComponent component = new GraphicComponent(SPEED,SPEED,SPEED2,SPEED2);
 		frame.add(component);
 		
 		
@@ -27,7 +28,7 @@ public class Second_Project_Main {
 		
 		while(true) {
 			component.move();
-//			component.dumpValues();
+			component.checkCollision();
 			component.repaint();
 			try {
 				TimeUnit.MILLISECONDS.sleep(10);
