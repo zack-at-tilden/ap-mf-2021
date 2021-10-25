@@ -19,6 +19,7 @@ public class Roman_Numerals_Main {
 			} 
 			else {
 			done=true;
+			System.out.printf("Thanks for playing!\n");
 			}
 		}
 		
