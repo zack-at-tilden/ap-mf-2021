@@ -14,14 +14,15 @@ public class Roman_Numerals_Main {
 			System.out.printf("Enter a number to be converted: ");
 			int input = in.nextInt();
 			if (input!=0) {
-				//RomanNumber number = new RomanNumber(input);
-				//number.display();
+				RomanNumber number = new RomanNumber(input);
+				number.display();
 			} 
 			else {
 			done=true;
 			}
 		}
 		
+		in.close();
 	}
 
 }

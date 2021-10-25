@@ -5,15 +5,15 @@ import java.util.HashMap;
 
 public class RomanNumber {
 	
-	static private HashMap<String,Integer> numbers = new HashMap<String,Integer>();
+	static private HashMap<Integer,String> numbers = new HashMap<Integer,String>();
 	static {
-		numbers.put("I",1);
-		numbers.put("V",5);
-		numbers.put("X",10);
-		numbers.put("L",50);
-		numbers.put("C",100);
-		numbers.put("D",500);
-		numbers.put("M",100);
+		numbers.put(1,"I");
+		numbers.put(5,"V");
+		numbers.put(10,"X");
+		numbers.put(50,"L");
+		numbers.put(100,"C");
+		numbers.put(500,"D");
+		numbers.put(1000,"M");
 	}
 	
 
@@ -23,6 +23,9 @@ public class RomanNumber {
 		number = number_in;
 	}
 
+	public void display() {
+		System.out.printf("%s\n",numbers.get(number));
+	}
 	
 	public int getNumber() {
 		return number;
