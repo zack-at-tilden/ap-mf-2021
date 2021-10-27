@@ -11,11 +11,11 @@ public class Roman_Numerals_Main {
 		
 		boolean done = false;
 		while(!done) {
-			System.out.printf("Enter a number to be converted: ");
+			System.out.printf("\nEnter a number to be converted: ");
 			int input = in.nextInt();
 			if (input!=0) {
 				RomanNumber number = new RomanNumber(input);
-				number.display();
+				number.calculate();
 			} 
 			else {
 			done=true;
