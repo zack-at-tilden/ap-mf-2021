@@ -14,8 +14,8 @@ public class Roman_Numerals_Main {
 			System.out.printf("\nEnter a number to be converted: ");
 			int input = in.nextInt();
 			if (input!=0) {
-				RomanNumber number = new RomanNumber(input);
-				number.calculate();
+				RomanNumber2 number = new RomanNumber2(input);
+				number.display();
 			} 
 			else {
 			done=true;
