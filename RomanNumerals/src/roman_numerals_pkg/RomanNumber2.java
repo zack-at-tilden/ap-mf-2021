@@ -43,10 +43,15 @@ public void display() {
 		displayLetter(1000);
 		remainder-=900;
 	}
-	for (int i = remainder/500;i>0;i--) {
+	if (remainder >= 500) {
 		displayLetter(500);
 		remainder -= 500;
 	}
+	else if (remainder >=400) {
+		displayLetter(100);
+		displayLetter(500);
+		remainder -= 400;
+	}		
 	for (int i = remainder/100;i>0;i--) {
 		displayLetter(100);
 	}
@@ -56,9 +61,14 @@ public void display() {
 		displayLetter(100);
 		remainder-=90;
 	}
-	for (int i = remainder/50;i>0;i--) {
+	if (remainder >= 50) {
 		displayLetter(50);
 		remainder-=50;
+	}
+	else if (remainder >= 40) {
+		displayLetter(10);
+		displayLetter(50);
+		remainder -= 40;
 	}
 	for (int i = remainder/10;i>0;i--) {
 		displayLetter(10);
@@ -69,9 +79,14 @@ public void display() {
 		displayLetter(10);
 		remainder-=9;
 	}
-	for (int i = remainder/5;i>0;i--) {
+	if (remainder >= 5) {
 		displayLetter(5);
 		remainder-=5;
+	}
+	else if (remainder >=4) {
+		displayLetter(1);
+		displayLetter(5);
+		remainder -= 4;
 	}
 	for (int i = remainder/1;i>0;i--) {
 		displayLetter(1);
