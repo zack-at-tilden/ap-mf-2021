@@ -21,7 +21,7 @@ public class GraphicComponent extends JComponent{
 	private int oval_height = 10;
 	
 	private int dx, dy;
-	private int odx,ody;
+	private int odx, ody;
 	
 	private Rectangle rec_T = new Rectangle(0,0,x[2]-x[0],y[1]-y[0]);
 	private Rectangle rec_O = new Rectangle(0,0,oval_width,oval_height);
