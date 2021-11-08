@@ -12,10 +12,10 @@ import javax.swing.JComponent;
 public class BoardComponent extends JComponent {
 	
 	private int x,y;
-	private int box_size = 5;
+	private int box_size = 3;
 	
-	private int[] xPoints = new int[1000];
-	private int[] yPoints = new int[1000];
+	private int[] xPoints = new int[100000];
+	private int[] yPoints = new int[100000];
 	private int pointPtr = 0;
 	
 	public BoardComponent() {
@@ -34,7 +34,7 @@ public class BoardComponent extends JComponent {
 		y=getHeight()/2;
 	}
 	
-	public void updateArray() {
+	private void updateArray() {
 		xPoints[pointPtr]=x;
 		yPoints[pointPtr]=y;
 		pointPtr++;
@@ -45,6 +45,13 @@ public class BoardComponent extends JComponent {
 		x+=dx;
 		y+=dy;
 		updateArray();
+	}
+	
+	public boolean outOfBounds() {
+		//System.out.printf("(%d,%d)\n",x,y);
+		if (x>getWidth() || x<0) return true;
+		if (y>getHeight() || y<0) return true;
+		return false;
 	}
 
 }
