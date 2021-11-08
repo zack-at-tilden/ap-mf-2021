@@ -10,7 +10,7 @@ public class Drunkards_Walk_Main {
 
 	public static void main(String[] args) {
 		JFrame  frame = new JFrame();
-		frame.setSize(600,600);
+		frame.setSize(800,800);
 		frame.setTitle("Drunkards Walk");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -31,13 +31,13 @@ public class Drunkards_Walk_Main {
 			board.move(dx,dy);
 			board.repaint();
 			try {
-				TimeUnit.MILLISECONDS.sleep(10);
+				TimeUnit.MILLISECONDS.sleep(1);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
 		
-		System.out.printf("Done!");
+		System.out.printf("Out of bounds!");
 	}
 
 }
