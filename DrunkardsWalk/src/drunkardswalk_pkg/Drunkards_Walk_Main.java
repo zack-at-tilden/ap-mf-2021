@@ -1,6 +1,7 @@
 package drunkardswalk_pkg;
 
 import java.util.concurrent.TimeUnit;
+import java.awt.event.WindowEvent;
 import java.util.Random;
 import javax.swing.JFrame;
 
@@ -10,7 +11,7 @@ public class Drunkards_Walk_Main {
 
 	public static void main(String[] args) {
 		JFrame  frame = new JFrame();
-		frame.setSize(800,800);
+		frame.setSize(1600,800);
 		frame.setTitle("Drunkards Walk");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -37,7 +38,14 @@ public class Drunkards_Walk_Main {
 			}
 		}
 		
-		System.out.printf("Out of bounds!");
+		System.out.printf("Out of bounds!\n");
+		System.out.printf("Pointer %d\n", board.getPtrPosition());
+		try {
+			TimeUnit.MILLISECONDS.sleep(10000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		frame.dispatchEvent(new WindowEvent(frame,WindowEvent.WINDOW_CLOSING));
 	}
 
 }

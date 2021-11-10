@@ -40,7 +40,6 @@ public class BoardComponent extends JComponent {
 		pointPtr++;
 	}
 	
-	
 	public void move(int dx, int dy) {
 		x+=dx;
 		y+=dy;
@@ -52,6 +51,10 @@ public class BoardComponent extends JComponent {
 		if (x>getWidth() || x<0) return true;
 		if (y>getHeight() || y<0) return true;
 		return false;
+	}
+	
+	public int getPtrPosition(){
+		return pointPtr;
 	}
 
 }
