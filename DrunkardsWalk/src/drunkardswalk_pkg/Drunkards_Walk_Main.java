@@ -39,7 +39,7 @@ public class Drunkards_Walk_Main {
 		}
 		
 		System.out.printf("Out of bounds!\n");
-		System.out.printf("Pointer %d\n", board.getPtrPosition());
+		System.out.printf("Pointer @ %,d!\n", board.getPtrPosition());
 		try {
 			TimeUnit.MILLISECONDS.sleep(10000);
 		} catch (InterruptedException e) {
