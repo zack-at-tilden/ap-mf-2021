@@ -15,38 +15,44 @@ public class Sprites_Main {
 		frame.setTitle("Sprites");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		SpriteComponent board = new SpriteComponent();
+		SpriteComponent board = new SpriteComponent(1,1);
+
 		frame.add(board);
-		
+
 		frame.setVisible(true);
 
 		board.update();
+
 		
 		Random r = new Random();
 		int dx,dy;
-	
+		int counter=0;
+		dx=1;
+		dy=1;
 		
-		while(!board.outOfBounds()){
-			dx=3-r.nextInt(7);
-			dy=3-r.nextInt(7);
-			
-	//		board.move(dx,dy);
+		
+		while(true){
+
+			board.checkBounds();
+
+			board.move();
+
 			board.repaint();
+
 			try {
-				TimeUnit.MILLISECONDS.sleep(1);
+				TimeUnit.MILLISECONDS.sleep(5);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
-		
-		System.out.printf("Out of bounds!\n");
+//		System.out.printf("Out of bounds!\n");
 //		System.out.printf("Pointer @ %,d!\n", board.getPtrPosition());
-		try {
+/*		try {
 			TimeUnit.MILLISECONDS.sleep(10000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		frame.dispatchEvent(new WindowEvent(frame,WindowEvent.WINDOW_CLOSING));
+*/
 	}
-
 }
