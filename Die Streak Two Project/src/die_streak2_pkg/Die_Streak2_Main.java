@@ -23,14 +23,28 @@ public class Die_Streak2_Main {
 		}
 		System.out.println();
 		
-		
-		
+		int streak_length=1;
+		boolean streak_found=false;
 		for (int i = 1; i < rollArray.length; i++) {
 			if (rollArray[i]==rollArray[i-1]) {
-				
+				streak_length++;
+				streak_found=true;
 			}
+			else {
+				if (streak_found) {
+					StreakObj streak = new StreakObj(i-streak_length+1,streak_length,rollArray[i-1]);
+					streaks.add(streak);
+					streak_length=1;
+					streak_found=false;
+				}
+			}
+			
 		}
 		
+		for (StreakObj so:streaks) {
+			so.printInfo();
+		}
+		System.out.println();
 		
 	}
 
