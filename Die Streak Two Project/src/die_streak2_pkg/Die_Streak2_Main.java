@@ -12,7 +12,7 @@ public class Die_Streak2_Main {
 	public static void main(String[] args) {
 		
 		Random die = new Random();
-		int[] rollArray = new int[50];
+		int[] rollArray = new int[500];
 		
 		for (int i = 0; i < rollArray.length; i++) {
 			rollArray[i] = die.nextInt(DIE)+1;
@@ -46,6 +46,21 @@ public class Die_Streak2_Main {
 		}
 		System.out.println();
 		
+		int longest_so_far=2;
+		int longest_streak_position=0;
+		//ArrayList<StreakObj> longest_streaks = new ArrayList<StreakObj>();
+		for (int i=0; i<streaks.size();i++) {
+			if (streaks.get(i).getLength()>longest_so_far) {
+				longest_so_far=streaks.get(i).getLength();
+				longest_streak_position=i;
+			}
+		}
+		
+		System.out.printf("Longest streak: ");
+		streaks.get(longest_streak_position).printInfo();
+		System.out.println();
+		
+
 	}
 
 }
