@@ -6,13 +6,14 @@ import java.util.Random;
 
 public class Die_Streak2_Main {
 	
-	static final int DIE=4;
+	static final int DIE=3;
+	static final int LEN=100;
 	static ArrayList<StreakObj> streaks = new ArrayList<StreakObj>();
 
 	public static void main(String[] args) {
 		
 		Random die = new Random();
-		int[] rollArray = new int[500];
+		int[] rollArray = new int[LEN];
 		
 		for (int i = 0; i < rollArray.length; i++) {
 			rollArray[i] = die.nextInt(DIE)+1;
@@ -32,7 +33,7 @@ public class Die_Streak2_Main {
 			}
 			else {
 				if (streak_found) {
-					StreakObj streak = new StreakObj(i-streak_length+1,streak_length,rollArray[i-1]);
+					StreakObj streak = new StreakObj(i-streak_length,streak_length,rollArray[i-1]);
 					streaks.add(streak);
 					streak_length=1;
 					streak_found=false;
@@ -59,8 +60,20 @@ public class Die_Streak2_Main {
 		System.out.printf("Longest streak: ");
 		streaks.get(longest_streak_position).printInfo();
 		System.out.println();
+		int arrayPos = streaks.get(longest_streak_position).getPosition();
+		int arrayLen = streaks.get(longest_streak_position).getLength()-1;
 		
 
+		for (int i=0;i<rollArray.length;i++) {
+			if(i==arrayPos) {
+				System.out.printf("(%d ",rollArray[i]);
+			}
+			else if(i==arrayPos+arrayLen) {
+				System.out.printf("%d) ",rollArray[i]);
+			}
+			else System.out.printf("%d ", rollArray[i]);
+		}
+		
 	}
 
 }

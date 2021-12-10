@@ -18,4 +18,9 @@ public class StreakObj {
 		System.out.printf("(p%d, l%d, n%d) ",pos,len,num);
 	}
 	
+	public int getPosition() {
+		return pos;
+	}
+	
+	
 }
