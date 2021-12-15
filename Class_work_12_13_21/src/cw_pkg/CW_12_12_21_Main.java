@@ -8,7 +8,7 @@ public class CW_12_12_21_Main {
 		
 
 		Random die = new Random();
-		char[] letters = new char[100];
+		char[] letters = new char[75];
 		
 		for (int i = 0; i<letters.length; i++) {
 			switch(die.nextInt(5)) {
