@@ -37,7 +37,10 @@ public class ThSeatPrcChart_Main {
 			if (seating[row][column] > 0) {
 				System.out.printf("%d ",seating[row][column]);
 				seating[row][column] = 0;
-				System.out.printf("request reserved");
+				System.out.printf("request reserved\n");
+			}
+			for (int j = 0;j < 10;j++) {
+				System.out.printf("%d ",seating[row][j]);
 			}
 		} else if (seatorprice.equals("p")) {
 			for (int i = 8;i > -1;i--) {
@@ -46,7 +49,24 @@ public class ThSeatPrcChart_Main {
 				}
 				System.out.println();
 			}
-			System.out.printf("[placeholder]");
+			System.out.printf("Select a price: (Choices are 10, 20, 30, 40, 50) >");
+			int price = select.nextInt();
+			label1:
+			for (int i = 8;i > -1;i--) {
+				for (int j = 0;j < 10;j++) {
+					if (seating[i][j] == price) {
+						seating[i][j] = 0;
+						break label1;
+					}
+				}
+			}
+			for (int i = 8;i > -1;i--) {
+				for (int j = 0;j < 10;j++) {
+					System.out.printf("%2d ",seating[i][j]);
+				}
+				System.out.println();
+			}
+			System.out.printf("request reserved\n");
 		}
 		
 	}
