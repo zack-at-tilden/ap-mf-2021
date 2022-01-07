@@ -3,9 +3,10 @@ public class LadyBug {
 
 	int xpos, ypos, spots, life_stage;
 	boolean hibernating, threatened, hungry;
-	double color, size;
+	double size;
+	String color;
 	
-	public LadyBug(int x,int y,int spotcount,double coloring,double sizing) {
+	public LadyBug(int x,int y,int spotcount,String coloring,double sizing) {
 		xpos = x;
 		ypos = y;
 		spots = spotcount;
@@ -16,6 +17,8 @@ public class LadyBug {
 		hibernating = false;
 		threatened = false;
 		hungry = false;
+		
+		
 	}
 	
 	public void move(int dx,int dy) {
@@ -27,6 +30,22 @@ public class LadyBug {
 		if (life_stage < 3) {
 			life_stage++;
 		}
+	}
+	
+	public void eat() {
+		if (hungry == true) {
+			hungry = false;
+		}
+		if (life_stage == 1) {
+			size++;
+		}
+	}
+	
+	public int getX() {
+		return xpos;
+	}
+	public int getY() {
+		return ypos;
 	}
 	
 }
