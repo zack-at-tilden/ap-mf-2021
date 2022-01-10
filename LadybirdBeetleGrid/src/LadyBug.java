@@ -12,6 +12,7 @@ public class LadyBug {
 		spots = spotcount;
 		color = coloring;
 		size = sizing;
+		//possible colors: red, redorange, orange, orangeyellow, yellow, yellowgreen
 		
 		life_stage = 0;
 		hibernating = false;

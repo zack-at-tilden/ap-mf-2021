@@ -15,6 +15,12 @@ public class LadybirdBug_Main {
 		ladybugs.add(b);
 		grid[ladybugs.get(0).getX()][ladybugs.get(0).getY()] = 'O';
 		
+		ArrayList<LadybugAphid> aphids = new ArrayList<LadybugAphid>();
+		
+		LadybugAphid a = new LadybugAphid(0,7,"green",5);
+		aphids.add(a);
+		grid[aphids.get(0).getX()][aphids.get(0).getY()] = '*';
+		
 		for (int i = 0; i<6; i++) {
 			for (int j = 0; j<8; j++) {
 				System.out.printf("%c ",grid[i][j]);
