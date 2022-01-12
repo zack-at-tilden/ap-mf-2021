@@ -6,7 +6,7 @@ public class LadyBug {
 	double size;
 	String color;
 	
-	public LadyBug(int x,int y,int spotcount,String coloring,double sizing) {
+	public LadyBug(int x,int y,int spotcount,String coloring,double sizing,int stage) {
 		xpos = x;
 		ypos = y;
 		spots = spotcount;
@@ -14,7 +14,7 @@ public class LadyBug {
 		size = sizing;
 		//possible colors: red, redorange, orange, orangeyellow, yellow, yellowgreen
 		
-		life_stage = 0;
+		life_stage = stage;
 		hibernating = false;
 		threatened = false;
 		hungry = false;
@@ -22,9 +22,20 @@ public class LadyBug {
 		
 	}
 	
+	public char getSymbol() {
+		if (life_stage == 0) return '0';
+		if (life_stage == 1) return 'T';
+		if (life_stage == 2) return '8';
+		return 'O';
+	}
+	
 	public void move(int dx,int dy) {
-		xpos += dx;
-		ypos += dy;
+		if (xpos+dx>=0 && xpos+dx<=7) {
+			xpos += dx;
+		}
+		if (ypos+dy>=0 && ypos+dy<=5) {
+			ypos += dy;
+		}
 	}
 	
 	public void grow() {
