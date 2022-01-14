@@ -27,9 +27,17 @@ public class LadybirdBug_Main {
 		
 		while (!done) {
 		
+		grid[ladybugs.get(0).getX()][ladybugs.get(0).getY()] = '-';
+		
+		if (Math.abs(aphids.get(0).getX()-ladybugs.get(0).getX())<2 && Math.abs(aphids.get(0).getY()-ladybugs.get(0).getY())<2) {
+			ladybugs.get(0).move(aphids.get(0).getX()-ladybugs.get(0).getX(), aphids.get(0).getY()-ladybugs.get(0).getY());
+		} else {
 		int randx = (int)(Math.random()*3)-1;
 		int randy = (int)(Math.random()*3)-1;
 		ladybugs.get(0).move(randx, randy);
+		}
+		
+		grid[ladybugs.get(0).getX()][ladybugs.get(0).getY()] = ladybugs.get(0).getSymbol();
 		
 		for (int i = 0; i<6; i++) {
 			for (int j = 0; j<8; j++) {
@@ -41,7 +49,7 @@ public class LadybirdBug_Main {
 		System.out.println();
 		
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(500);
 		}
 		catch (Exception e) {
 			System.out.println (e);

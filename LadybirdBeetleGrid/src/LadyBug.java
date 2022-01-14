@@ -30,12 +30,14 @@ public class LadyBug {
 	}
 	
 	public void move(int dx,int dy) {
-		if (xpos+dx>=0 && xpos+dx<=7) {
+		if (xpos+dx>=0 && xpos+dx<=5) {
 			xpos += dx;
 		}
-		if (ypos+dy>=0 && ypos+dy<=5) {
+		if (ypos+dy>=0 && ypos+dy<=7) {
 			ypos += dy;
 		}
+		System.out.print(xpos);
+		System.out.println(ypos);
 	}
 	
 	public void grow() {
