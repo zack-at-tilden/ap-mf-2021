@@ -26,15 +26,34 @@ public class LadybirdBug_Main {
 		boolean done = false;
 		
 		while (!done) {
+			
+			for (int i = 0; i<6; i++) {
+				for (int j = 0; j<8; j++) {
+					grid[i][j] = '-';
+				}
+			}
 		
 		grid[ladybugs.get(0).getX()][ladybugs.get(0).getY()] = '-';
+		if(aphids.size()>0) grid[aphids.get(0).getX()][aphids.get(0).getY()] = '*';
 		
+		if (aphids.size()>0) {
+			
 		if (Math.abs(aphids.get(0).getX()-ladybugs.get(0).getX())<2 && Math.abs(aphids.get(0).getY()-ladybugs.get(0).getY())<2) {
 			ladybugs.get(0).move(aphids.get(0).getX()-ladybugs.get(0).getX(), aphids.get(0).getY()-ladybugs.get(0).getY());
 		} else {
 		int randx = (int)(Math.random()*3)-1;
 		int randy = (int)(Math.random()*3)-1;
 		ladybugs.get(0).move(randx, randy);
+			}
+		if (aphids.get(0).getX()==ladybugs.get(0).getX() && aphids.get(0).getY()==ladybugs.get(0).getY()) {
+			ladybugs.get(0).eat();
+			aphids.remove(0);
+			}
+		
+		} else {
+			int randx = (int)(Math.random()*3)-1;
+			int randy = (int)(Math.random()*3)-1;
+			ladybugs.get(0).move(randx, randy);
 		}
 		
 		grid[ladybugs.get(0).getX()][ladybugs.get(0).getY()] = ladybugs.get(0).getSymbol();
@@ -49,7 +68,7 @@ public class LadybirdBug_Main {
 		System.out.println();
 		
 		try {
-			Thread.sleep(500);
+			Thread.sleep(250);
 		}
 		catch (Exception e) {
 			System.out.println (e);
